@@ -1,5 +1,5 @@
 package nawaphon.export;
 
 
-public class SpecialCampaigns {
+public class SpecialCampaigns extends Campaignable {
 }

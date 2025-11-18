@@ -23,4 +23,10 @@ public class CampaignEntryBuilder {
         return new CampaignEntryBuilder();
     }
 
+    public CampaignEntryBuilder addCampaignable(Campaignable campaignable) {
+        campaignables.add(campaignable);
+
+        return this;
+    }
+
 }

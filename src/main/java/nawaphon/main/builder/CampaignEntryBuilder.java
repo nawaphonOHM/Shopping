@@ -4,6 +4,8 @@ package nawaphon.main.builder;
 import jakarta.validation.Validation;
 import jakarta.validation.ValidationException;
 import nawaphon.export.Campaignable;
+import nawaphon.internal.CampaignCategory;
+import nawaphon.internal.ConflictCampaignIdException;
 import nawaphon.internal.FoundKey;
 import nawaphon.internal.FoundValue;
 import org.apache.commons.lang3.tuple.Pair;
@@ -26,8 +28,24 @@ public class CampaignEntryBuilder {
 
     }
 
-    private Pair<Boolean, RuntimeException> ableToAdd(Campaignable campaignable) {
-        return null;
+    private Pair<Boolean, RuntimeException> ableToAdd(@NotNull Campaignable campaignable) {
+        final var annotation = campaignable.getClass().getAnnotation(CampaignCategory.class);
+
+        final var category = annotation.category();
+
+        if (!campaignTable.containsKey(new FoundKey(category))) {
+            campaignTable.put(new FoundKey(category), new FoundValue(annotation.id()));
+
+            return Pair.of(true, null);
+        }
+
+        final var number = campaignTable.get(new FoundKey(category));
+
+        if (!number.equals(new FoundValue(annotation.id()))) {
+            return Pair.of(false, new ConflictCampaignIdException(category, number.getValue(), annotation.id()));
+        }
+
+        return Pair.of(true, null);
     }
 
     @NotNull

@@ -1,5 +1,5 @@
 package nawaphon.export;
 
 
-public class PercentageDiscountCampaign {
+public class PercentageDiscountCampaign extends Campaignable {
 }

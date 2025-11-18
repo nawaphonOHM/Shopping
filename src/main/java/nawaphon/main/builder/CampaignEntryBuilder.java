@@ -6,6 +6,7 @@ import jakarta.validation.ValidationException;
 import nawaphon.export.Campaignable;
 import nawaphon.internal.FoundKey;
 import nawaphon.internal.FoundValue;
+import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import nawaphon.main.CampaignEntry;
@@ -23,6 +24,10 @@ public class CampaignEntryBuilder {
 
     private CampaignEntryBuilder() {
 
+    }
+
+    private Pair<Boolean, RuntimeException> ableToAdd(Campaignable campaignable) {
+        return null;
     }
 
     @NotNull

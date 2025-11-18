@@ -15,4 +15,8 @@ public class CampaignEntryBuilder {
 
     }
 
+    public static CampaignEntryBuilder getBuilder() {
+        return new CampaignEntryBuilder();
+    }
+
 }

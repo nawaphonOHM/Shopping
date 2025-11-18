@@ -64,6 +64,14 @@ public class CampaignEntryBuilder {
             }
         }
 
+        final var pair = ableToAdd(campaignable);
+
+        final boolean ok = pair.getLeft();
+
+        if (!ok) {
+            throw pair.getRight();
+        }
+
         campaignables.add(campaignable);
 
         return this;

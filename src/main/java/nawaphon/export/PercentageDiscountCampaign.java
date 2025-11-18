@@ -2,7 +2,9 @@ package nawaphon.export;
 
 
 import jakarta.validation.constraints.Min;
+import nawaphon.internal.CampaignCategory;
 
+@CampaignCategory(category = "COUPON", id = 2)
 public class PercentageDiscountCampaign extends Campaignable {
 
 

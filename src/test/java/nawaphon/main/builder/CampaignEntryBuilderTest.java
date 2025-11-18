@@ -17,4 +17,11 @@ class CampaignEntryBuilderTest {
         assertThrowsExactly(ValidationException.class, () ->  builder.addCampaignable(new FixAmountCampaign(-9.0f)));
 
     }
+
+    @Test
+    void shouldBuildSuccess() {
+        final var builder = CampaignEntryBuilder.getBuilder();
+
+        assertDoesNotThrow(() -> builder.addCampaignable(new FixAmountCampaign(9.0f)));
+    }
 }

@@ -11,4 +11,8 @@ public class CampaignEntryBuilder {
 
     private final List<Campaignable> campaignables = new ArrayList<>();
 
+    private CampaignEntryBuilder() {
+
+    }
+
 }

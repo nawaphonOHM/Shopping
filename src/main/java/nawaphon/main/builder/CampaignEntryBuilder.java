@@ -5,6 +5,7 @@ package nawaphon.main.builder;
 import nawaphon.export.Campaignable;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import nawaphon.main.CampaignEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,10 @@ public class CampaignEntryBuilder {
         campaignables.add(campaignable);
 
         return this;
+    }
+
+    public CampaignEntry build() {
+        return new CampaignEntry(campaignables);
     }
 
 }

@@ -3,7 +3,10 @@ package nawaphon.export;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import nawaphon.internal.CampaignCategory;
 
+
+@CampaignCategory(category = "ON_TOP", id = 1)
 public class PercentageDiscountByItem extends Campaignable {
 
     @NotNull

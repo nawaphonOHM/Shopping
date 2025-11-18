@@ -2,7 +2,10 @@ package nawaphon.export;
 
 
 import jakarta.validation.constraints.Min;
+import nawaphon.internal.CampaignCategory;
 
+
+@CampaignCategory(category = "SEASONAL", id = 1)
 public class SpecialCampaigns extends Campaignable {
 
     @Min(0)

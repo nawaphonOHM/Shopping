@@ -3,6 +3,8 @@ package nawaphon.main.builder;
 
 
 import nawaphon.export.Campaignable;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,8 @@ public class CampaignEntryBuilder {
 
     }
 
+    @NotNull
+    @Contract(" -> new")
     public static CampaignEntryBuilder getBuilder() {
         return new CampaignEntryBuilder();
     }

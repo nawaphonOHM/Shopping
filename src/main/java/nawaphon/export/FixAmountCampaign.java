@@ -1,7 +1,11 @@
 package nawaphon.export;
 
 
-public class FixAmountCampaign extends Campaignable  {
+import jakarta.validation.constraints.Min;
+
+public class FixAmountCampaign extends Campaignable {
+
+    @Min(0)
     private final float amount;
 
     public FixAmountCampaign(float amount) {

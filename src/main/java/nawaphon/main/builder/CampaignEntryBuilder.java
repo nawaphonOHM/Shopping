@@ -1,7 +1,8 @@
 package nawaphon.main.builder;
 
 
-
+import jakarta.validation.Validation;
+import jakarta.validation.ValidationException;
 import nawaphon.export.Campaignable;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -25,6 +26,15 @@ public class CampaignEntryBuilder {
     }
 
     public CampaignEntryBuilder addCampaignable(Campaignable campaignable) {
+
+        try (final var validator = Validation.buildDefaultValidatorFactory()) {
+            final var validate = validator.getValidator().validate(campaignable);
+
+            if (!validate.isEmpty()) {
+                throw new ValidationException(validate.toString());
+            }
+        }
+
         campaignables.add(campaignable);
 
         return this;

@@ -2,7 +2,9 @@ package nawaphon.export;
 
 
 import jakarta.validation.constraints.Min;
+import nawaphon.internal.CampaignCategory;
 
+@CampaignCategory(category = "COUPON", id = 1)
 public class FixAmountCampaign extends Campaignable {
 
     @Min(0)

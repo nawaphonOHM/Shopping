@@ -75,6 +75,24 @@ public abstract class DiscountCalulator {
                     .floatValue());
         }
 
+        if (campaign instanceof SpecialCampaigns) {
+            var total = BigDecimal.ZERO;
+
+            for (final var iterator = itemCart.iterator(); iterator.hasNext(); ) {
+                var item = iterator.next();
+
+                total = total.add(new BigDecimal(item.getTotalPrice()));
+            }
+
+            final var mulipiler = total.divideToIntegralValue(
+                    new BigDecimal(((SpecialCampaigns) campaign).getEveryBaht())
+            );
+
+            return new DiscountReceived(
+                    mulipiler.multiply(new BigDecimal(((SpecialCampaigns) campaign).getDiscount())).floatValue()
+            );
+        }
+
         return null;
     }
 

@@ -22,4 +22,8 @@ public class FoundValue {
     public int hashCode() {
         return Objects.hashCode(value);
     }
+
+    public int getValue() {
+        return value;
+    }
 }

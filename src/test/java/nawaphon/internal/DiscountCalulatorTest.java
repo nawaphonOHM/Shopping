@@ -117,4 +117,9 @@ class DiscountCalulatorTest {
         Assertions.assertEquals(80, DiscountCalulator.calculateDiscount(itemCart, campaign).discount());
     }
 
+    @Test
+    void calculateTotalReceived() {
+
+    }
+
 }

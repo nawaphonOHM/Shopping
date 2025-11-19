@@ -16,4 +16,8 @@ public class DiscountByPoints extends Campaignable {
     public DiscountByPoints(float points) {
         this.points = points;
     }
+
+    public float getPoints() {
+        return points;
+    }
 }

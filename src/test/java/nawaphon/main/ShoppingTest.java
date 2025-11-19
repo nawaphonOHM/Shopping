@@ -111,4 +111,9 @@ class ShoppingTest {
         Assertions.assertEquals(664, shopping.getTotalPrice());
     }
 
+    @Test
+    void shopping6() {
+
+    }
+
 }

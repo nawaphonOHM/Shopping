@@ -8,7 +8,10 @@ public class Item {
     @NotNull
     private final Category category;
 
-    public Item(Category category) {
+    private final String name;
+
+    public Item(Category category, String name) {
         this.category = category;
+        this.name = name;
     }
 }

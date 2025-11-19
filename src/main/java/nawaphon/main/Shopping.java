@@ -12,4 +12,8 @@ public class Shopping {
         this.itemCartEntry = itemCartEntry;
         this.campaignEntry = campaignEntry;
     }
+
+    public boolean process() {
+        return false;
+    }
 }

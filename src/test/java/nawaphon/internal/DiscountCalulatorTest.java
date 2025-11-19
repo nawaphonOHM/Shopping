@@ -82,7 +82,21 @@ class DiscountCalulatorTest {
 
     @Test
     void calculateDiscountByPointsMoreThanMaxDiscount() {
+        final var itemCart = ItemCardBuilder.getBuilder().addItem(
+                        new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                ).addItem(
+                        new Item(Category.CLOTHING, "Hat", 250.0f, 1)
+                ).addItem(
+                        new Item(Category.CLOTHING, "Belt", 230.0f, 1)
+                )
+                .build();
 
+
+        final var campaign = new DiscountByPoints(9999f);
+
+        DiscountCalulator.calculateDiscount(itemCart, campaign);
+
+        Assertions.assertEquals(166, DiscountCalulator.calculateDiscount(itemCart, campaign).discount());
     }
 
 }

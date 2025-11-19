@@ -1,5 +1,9 @@
 package nawaphon.internal;
 
 
-public class ItemCart {
+import nawaphon.export.Item;
+
+import java.util.ArrayList;
+
+public class ItemCart extends ArrayList<Item> {
 }

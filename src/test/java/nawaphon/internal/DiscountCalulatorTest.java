@@ -131,4 +131,8 @@ class DiscountCalulatorTest {
         Assertions.assertEquals(830, DiscountCalulator.calculateTotal(itemCart).total());
     }
 
+    @Test
+    void sortedCampaign() {
+
+    }
 }

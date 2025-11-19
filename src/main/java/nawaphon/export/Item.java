@@ -18,9 +18,12 @@ public class Item {
     @Min(0)
     private final float price;
 
-    public Item(Category category, String name, float price) {
+    private final int amount;
+
+    public Item(Category category, String name, float price, int amount) {
         this.category = category;
         this.name = name;
         this.price = price;
+        this.amount = amount;
     }
 }

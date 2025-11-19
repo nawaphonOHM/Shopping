@@ -1,6 +1,8 @@
 package nawaphon.main.builder;
 
 
+import jakarta.validation.Validation;
+import jakarta.validation.ValidationException;
 import nawaphon.export.Item;
 import nawaphon.internal.ItemCart;
 import org.jetbrains.annotations.Contract;
@@ -16,7 +18,18 @@ public class ItemCardBuilder {
     }
 
     public ItemCardBuilder addItem(Item item) {
-        return null;
+
+        try (final var validator = Validation.buildDefaultValidatorFactory()) {
+            final var validate = validator.getValidator().validate(item);
+
+            if (!validate.isEmpty()) {
+                throw new ValidationException(validate.toString());
+            }
+        }
+
+        itemCart.add(item);
+
+        return this;
     }
 
 }

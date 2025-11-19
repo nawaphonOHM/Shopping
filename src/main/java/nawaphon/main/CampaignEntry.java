@@ -16,6 +16,9 @@ public class CampaignEntry {
     }
 
     public boolean sortedBy(Comparator<Campaignable> comparator) {
-        return false;
+
+        campaignables.sort(comparator);
+
+        return true;
     }
 }

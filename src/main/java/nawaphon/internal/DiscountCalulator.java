@@ -1,7 +1,9 @@
 package nawaphon.internal;
 
 
+import nawaphon.export.Campaignable;
 import nawaphon.main.CampaignEntry;
+import nawaphon.main.ItemCartEntry;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class DiscountCalulator {
@@ -12,6 +14,10 @@ public abstract class DiscountCalulator {
         campaign.sortedBy(new CampaignComparable());
 
         return true;
+    }
+
+    public static DiscountReceived calculateDiscount(ItemCartEntry itemCart, Campaignable campaign) {
+        return null;
     }
 
 }

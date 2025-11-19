@@ -4,9 +4,11 @@ package nawaphon.export;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import nawaphon.internal.CampaignCategory;
+import nawaphon.internal.Order;
 
 
 @CampaignCategory(category = "ON_TOP", id = 1)
+@Order(2)
 public class PercentageDiscountByItem extends Campaignable {
 
     @NotNull

@@ -34,6 +34,6 @@ public class Shopping {
     }
 
     public float getTotalPrice() {
-        return 0f;
+        return totalPrice;
     }
 }

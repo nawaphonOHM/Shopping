@@ -29,6 +29,6 @@ public class Item {
     }
 
     public float getTotalPrice() {
-        return 0.0f;
+        return price * amount;
     }
 }

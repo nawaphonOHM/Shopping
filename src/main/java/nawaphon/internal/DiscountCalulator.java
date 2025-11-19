@@ -20,8 +20,17 @@ public abstract class DiscountCalulator {
         return true;
     }
 
-    public static TotalReceived calculateTotal(ItemCartEntry itemCart) {
-        return null;
+    @Contract("_ -> new")
+    public static @NotNull TotalReceived calculateTotal(@NotNull ItemCartEntry itemCart) {
+        var total = BigDecimal.ZERO;
+
+        for (final var iterator = itemCart.iterator(); iterator.hasNext(); ) {
+            var item = iterator.next();
+
+            total = total.add(new BigDecimal(item.getTotalPrice()));
+        }
+
+        return new TotalReceived(total.floatValue());
     }
 
     @Contract("_, null -> fail")

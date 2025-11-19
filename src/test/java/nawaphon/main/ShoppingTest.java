@@ -113,7 +113,23 @@ class ShoppingTest {
 
     @Test
     void shopping6() {
+        final var shopping = new Shopping(
+                ItemCardBuilder.getBuilder().addItem(
+                                new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                        ).addItem(
+                                new Item(Category.CLOTHING, "Hat", 250.0f, 1)
+                        ).addItem(
+                                new Item(Category.ACCESSORIES, "Belt", 230.0f, 1)
+                        )
+                        .build(),
+                CampaignEntryBuilder.getBuilder().addCampaignable(
+                        new SpecialCampaigns(300, 40)
+                ).build()
+        );
 
+        shopping.process();
+
+        Assertions.assertEquals(750, shopping.getTotalPrice());
     }
 
 }

@@ -18,6 +18,7 @@ public class Item {
     @Min(0)
     private final float price;
 
+    @Min(0)
     private final int amount;
 
     public Item(Category category, String name, float price, int amount) {

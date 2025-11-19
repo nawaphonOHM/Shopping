@@ -31,4 +31,8 @@ public class Item {
     public float getTotalPrice() {
         return price * amount;
     }
+
+    public Category getCategory() {
+        return category;
+    }
 }

@@ -4,6 +4,7 @@ package nawaphon.internal;
 import nawaphon.export.Category;
 import nawaphon.export.FixAmountCampaign;
 import nawaphon.export.Item;
+import nawaphon.export.PercentageDiscountCampaign;
 import nawaphon.main.builder.ItemCardBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,19 @@ class DiscountCalulatorTest {
     }
 
     @Test
-    void calculatePercentageDiscount() {}
+    void calculatePercentageDiscount() {
+        final var itemCart = ItemCardBuilder.getBuilder().addItem(
+                        new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                ).addItem(
+                        new Item(Category.CLOTHING, "Hat", 250.0f, 1)
+                )
+                .build();
+
+        final var campaign = new PercentageDiscountCampaign(10.0f);
+
+        DiscountCalulator.calculateDiscount(itemCart, campaign);
+
+        Assertions.assertEquals(60, DiscountCalulator.calculateDiscount(itemCart, campaign).discount());
+    }
 
 }

@@ -5,6 +5,7 @@ import jakarta.validation.Validation;
 import jakarta.validation.ValidationException;
 import nawaphon.export.Item;
 import nawaphon.internal.ItemCart;
+import nawaphon.main.ItemCartEntry;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +31,10 @@ public class ItemCardBuilder {
         itemCart.add(item);
 
         return this;
+    }
+
+    public ItemCartEntry build() {
+        return null;
     }
 
 }

@@ -119,7 +119,16 @@ class DiscountCalulatorTest {
 
     @Test
     void calculateTotalReceived() {
+        final var itemCart = ItemCardBuilder.getBuilder().addItem(
+                        new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                ).addItem(
+                        new Item(Category.CLOTHING, "Hat", 250.0f, 1)
+                ).addItem(
+                        new Item(Category.CLOTHING, "Belt", 230.0f, 1)
+                )
+                .build();
 
+        Assertions.assertEquals(830, DiscountCalulator.calculateTotal(itemCart).total());
     }
 
 }

@@ -34,7 +34,7 @@ public class ItemCardBuilder {
     }
 
     public ItemCartEntry build() {
-        return null;
+        return new ItemCartEntry(itemCart);
     }
 
 }

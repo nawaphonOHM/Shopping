@@ -7,4 +7,8 @@ public class ItemCardBuilder {
 
     private final ItemCart itemCart = new ItemCart();
 
+    public static ItemCardBuilder getBuilder() {
+        return null;
+    }
+
 }

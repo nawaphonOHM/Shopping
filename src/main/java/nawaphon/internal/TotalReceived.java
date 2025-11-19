@@ -1,5 +1,7 @@
 package nawaphon.internal;
 
 
-public record TotalReceived() {
+public record TotalReceived(
+        float total
+) {
 }

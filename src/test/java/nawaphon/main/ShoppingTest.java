@@ -1,9 +1,6 @@
 package nawaphon.main;
 
-import nawaphon.export.Category;
-import nawaphon.export.FixAmountCampaign;
-import nawaphon.export.Item;
-import nawaphon.export.PercentageDiscountCampaign;
+import nawaphon.export.*;
 import nawaphon.main.builder.CampaignEntryBuilder;
 import nawaphon.main.builder.ItemCardBuilder;
 import org.junit.jupiter.api.Assertions;
@@ -47,6 +44,29 @@ class ShoppingTest {
         shopping.process();
 
         Assertions.assertEquals(540, shopping.getTotalPrice());
+    }
+
+    @Test
+    void shopping3() {
+        final var shopping = new Shopping(
+                ItemCardBuilder.getBuilder().addItem(
+                                new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                        ).addItem(
+                                new Item(Category.CLOTHING, "Hoodie", 700.0f, 1)
+                        ).addItem(
+                                new Item(Category.ACCESSORIES, "Watch", 850.0f, 1)
+                        ).addItem(
+                                new Item(Category.ACCESSORIES, "Bag", 640.0f, 1)
+                        )
+                        .build(),
+                CampaignEntryBuilder.getBuilder().addCampaignable(
+                        new PercentageDiscountByItem(Category.CLOTHING, 15.0f)
+                ).build()
+        );
+
+        shopping.process();
+
+        Assertions.assertEquals(2382.5, shopping.getTotalPrice());
     }
 
 }

@@ -4,6 +4,7 @@ package nawaphon.internal;
 import nawaphon.export.*;
 import nawaphon.main.CampaignEntry;
 import nawaphon.main.ItemCartEntry;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
@@ -19,7 +20,8 @@ public abstract class DiscountCalulator {
         return true;
     }
 
-    public static DiscountReceived calculateDiscount(ItemCartEntry itemCart, Campaignable campaign) {
+    @Contract("_, null -> fail")
+    public static @NotNull DiscountReceived calculateDiscount(ItemCartEntry itemCart, Campaignable campaign) {
 
         if (campaign instanceof FixAmountCampaign) {
             return new DiscountReceived(((FixAmountCampaign) campaign).getAmount());
@@ -93,7 +95,7 @@ public abstract class DiscountCalulator {
             );
         }
 
-        return null;
+        throw new UnexpectedReachHereException();
     }
 
 }

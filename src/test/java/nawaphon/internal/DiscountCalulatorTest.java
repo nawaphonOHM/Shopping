@@ -62,4 +62,8 @@ class DiscountCalulatorTest {
         Assertions.assertEquals(157.5, DiscountCalulator.calculateDiscount(itemCart, campaign).discount());
     }
 
+    @Test
+    void calculateDiscountByPointsNotMoreThanMaxDiscount() {
+    }
+
 }

@@ -5,6 +5,7 @@ package nawaphon.main;
 import nawaphon.export.Campaignable;
 
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 public class CampaignEntry {
@@ -24,5 +25,9 @@ public class CampaignEntry {
 
     public Campaignable get(int index) {
         return campaignables.get(index);
+    }
+
+    public Iterator<Campaignable> getCampaignables() {
+        return null;
     }
 }

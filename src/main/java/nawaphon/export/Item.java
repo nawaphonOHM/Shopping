@@ -27,4 +27,8 @@ public class Item {
         this.price = price;
         this.amount = amount;
     }
+
+    public float getTotalPrice() {
+        return 0.0f;
+    }
 }

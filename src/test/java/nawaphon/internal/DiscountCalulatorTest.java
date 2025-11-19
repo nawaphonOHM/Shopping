@@ -28,4 +28,7 @@ class DiscountCalulatorTest {
 
     }
 
+    @Test
+    void calculatePercentageDiscount() {}
+
 }

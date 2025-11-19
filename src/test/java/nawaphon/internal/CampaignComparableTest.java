@@ -30,4 +30,9 @@ class CampaignComparableTest {
         assertTrue(comparator.compare(campaignable2, campaignable1) > 0, "Should be positive");
     }
 
+    @Test
+    void shouldReturnNegativeNumber() {
+
+    }
+
 }

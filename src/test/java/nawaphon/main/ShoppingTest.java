@@ -31,4 +31,9 @@ class ShoppingTest {
 
     }
 
+    @Test
+    void shopping2() {
+
+    }
+
 }

@@ -2,6 +2,8 @@ package nawaphon.main.builder;
 
 import jakarta.validation.ValidationException;
 import nawaphon.export.FixAmountCampaign;
+import nawaphon.export.PercentageDiscountCampaign;
+import nawaphon.internal.ConflictCampaignIdException;
 import org.junit.jupiter.api.Test;
 
 
@@ -27,5 +29,10 @@ class CampaignEntryBuilderTest {
 
     @Test
     void shouldUnableAddCampaignWithDifferentIdButSameCategory() {
+        final var builder = CampaignEntryBuilder.getBuilder();
+
+        assertThrowsExactly(ConflictCampaignIdException.class, () ->
+                builder.addCampaignable(new FixAmountCampaign(9.0f))
+                .addCampaignable(new PercentageDiscountCampaign(9.0f)));
     }
 }

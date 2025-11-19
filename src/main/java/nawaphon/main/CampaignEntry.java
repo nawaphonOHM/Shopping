@@ -28,6 +28,6 @@ public class CampaignEntry {
     }
 
     public Iterator<Campaignable> getCampaignables() {
-        return null;
+        return campaignables.iterator();
     }
 }

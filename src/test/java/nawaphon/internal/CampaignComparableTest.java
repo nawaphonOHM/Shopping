@@ -19,4 +19,9 @@ class CampaignComparableTest {
 
     }
 
+    @Test
+    void shouldReturnPositiveNumber() {
+
+    }
+
 }

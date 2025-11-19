@@ -32,4 +32,8 @@ public class Shopping {
 
         return true;
     }
+
+    public float getTotalPrice() {
+        return 0f;
+    }
 }

@@ -16,4 +16,8 @@ public class PercentageDiscountCampaign extends Campaignable {
     public PercentageDiscountCampaign(float percentage) {
         this.percentage = percentage;
     }
+
+    public float getPercentage() {
+        return percentage;
+    }
 }

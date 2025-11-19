@@ -20,6 +20,10 @@ public abstract class DiscountCalulator {
         return true;
     }
 
+    public static TotalReceived calculateTotal(ItemCartEntry itemCart) {
+        return null;
+    }
+
     @Contract("_, null -> fail")
     public static @NotNull DiscountReceived calculateDiscount(ItemCartEntry itemCart, Campaignable campaign) {
 

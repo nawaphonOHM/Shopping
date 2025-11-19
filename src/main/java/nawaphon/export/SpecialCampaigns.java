@@ -24,4 +24,8 @@ public class SpecialCampaigns extends Campaignable {
     public float getEveryBaht() {
         return everyBaht;
     }
+
+    public float getDiscount() {
+        return discount;
+    }
 }

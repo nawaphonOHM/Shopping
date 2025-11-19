@@ -14,8 +14,11 @@ public class Item {
     @Pattern(regexp = "^[a-zA-Z\\p{IsThai}\\-][ a-zA-Z\\p{IsThai}\\-]+[a-zA-Z\\p{IsThai}\\-]$")
     private final String name;
 
-    public Item(Category category, String name) {
+    private final float price;
+
+    public Item(Category category, String name, float price) {
         this.category = category;
         this.name = name;
+        this.price = price;
     }
 }

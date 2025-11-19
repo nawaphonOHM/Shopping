@@ -23,6 +23,6 @@ public class CampaignEntry {
     }
 
     public Campaignable get(int index) {
-        return null;
+        return campaignables.get(index);
     }
 }

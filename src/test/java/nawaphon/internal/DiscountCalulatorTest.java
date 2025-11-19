@@ -2,6 +2,8 @@ package nawaphon.internal;
 
 
 import nawaphon.export.*;
+import nawaphon.main.CampaignEntry;
+import nawaphon.main.builder.CampaignEntryBuilder;
 import nawaphon.main.builder.ItemCardBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -133,6 +135,17 @@ class DiscountCalulatorTest {
 
     @Test
     void sortedCampaign() {
+        final var campaign1 = new PercentageDiscountCampaign(15.0f);
+        final var campaign2 = new SpecialCampaigns(500.0f, 50.0f);
 
+        final var campaignEntry = CampaignEntryBuilder.getBuilder()
+                .addCampaignable(campaign2)
+                .addCampaignable(campaign1)
+                .build();
+
+        Assertions.assertDoesNotThrow(() -> DiscountCalulator.sortedCampaign(campaignEntry));
+
+        Assertions.assertEquals(campaign1, campaignEntry.get(0));
+        Assertions.assertEquals(campaign2, campaignEntry.get(1));
     }
 }

@@ -21,4 +21,8 @@ public class CampaignEntry {
 
         return true;
     }
+
+    public Campaignable get(int index) {
+        return null;
+    }
 }

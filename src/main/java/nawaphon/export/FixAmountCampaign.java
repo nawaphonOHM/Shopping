@@ -15,4 +15,8 @@ public class FixAmountCampaign extends Campaignable {
     public FixAmountCampaign(float amount) {
         this.amount = amount;
     }
+
+    public float getAmount() {
+        return amount;
+    }
 }

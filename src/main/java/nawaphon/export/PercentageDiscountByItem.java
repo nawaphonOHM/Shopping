@@ -21,4 +21,8 @@ public class PercentageDiscountByItem extends Campaignable {
         this.category = category;
         this.amount = amount;
     }
+
+    public Category getCategory() {
+        return category;
+    }
 }

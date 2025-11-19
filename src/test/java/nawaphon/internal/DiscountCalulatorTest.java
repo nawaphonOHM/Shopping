@@ -45,4 +45,8 @@ class DiscountCalulatorTest {
         Assertions.assertEquals(60, DiscountCalulator.calculateDiscount(itemCart, campaign).discount());
     }
 
+    @Test
+    void calculatePercentageDiscountByItem() {
+    }
+
 }

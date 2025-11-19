@@ -1,8 +1,7 @@
-package nawaphon.main;
+package nawaphon.internal;
 
 
 import nawaphon.export.Item;
-import nawaphon.internal.ItemCart;
 
 import java.util.Iterator;
 

@@ -2,7 +2,6 @@ package nawaphon.internal;
 
 
 import nawaphon.export.*;
-import nawaphon.main.CampaignEntry;
 import nawaphon.main.builder.CampaignEntryBuilder;
 import nawaphon.main.builder.ItemCardBuilder;
 import org.junit.jupiter.api.Assertions;

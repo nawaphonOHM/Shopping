@@ -1,7 +1,9 @@
 package nawaphon.main;
 
 
+import nawaphon.internal.CampaignEntry;
 import nawaphon.internal.DiscountCalulator;
+import nawaphon.internal.ItemCartEntry;
 
 import java.math.BigDecimal;
 

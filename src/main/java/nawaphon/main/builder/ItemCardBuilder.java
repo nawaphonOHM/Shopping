@@ -5,7 +5,7 @@ import jakarta.validation.Validation;
 import jakarta.validation.ValidationException;
 import nawaphon.export.Item;
 import nawaphon.internal.ItemCart;
-import nawaphon.main.ItemCartEntry;
+import nawaphon.internal.ItemCartEntry;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 

@@ -11,7 +11,7 @@ import nawaphon.internal.FoundValue;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import nawaphon.main.CampaignEntry;
+import nawaphon.internal.CampaignEntry;
 
 import java.util.ArrayList;
 import java.util.HashMap;

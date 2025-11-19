@@ -2,8 +2,6 @@ package nawaphon.internal;
 
 
 import nawaphon.export.*;
-import nawaphon.main.CampaignEntry;
-import nawaphon.main.ItemCartEntry;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 

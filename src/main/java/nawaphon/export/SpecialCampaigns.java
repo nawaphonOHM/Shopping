@@ -20,4 +20,8 @@ public class SpecialCampaigns extends Campaignable {
         this.everyBaht = everyBaht;
         this.discount = discount;
     }
+
+    public float getEveryBaht() {
+        return everyBaht;
+    }
 }

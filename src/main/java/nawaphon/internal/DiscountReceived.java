@@ -1,5 +1,5 @@
 package nawaphon.internal;
 
 
-public record DiscountReceived() {
+public record DiscountReceived(float discount) {
 }

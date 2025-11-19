@@ -132,4 +132,28 @@ class ShoppingTest {
         Assertions.assertEquals(750, shopping.getTotalPrice());
     }
 
+    @Test
+    void shopping8() {
+
+        final var shopping = new Shopping(
+                ItemCardBuilder.getBuilder().addItem(
+                                new Item(Category.CLOTHING, "T-shirt", 350.0f, 1)
+                        ).addItem(
+                                new Item(Category.CLOTHING, "Hat", 250.0f, 1)
+                        )
+                        .build(),
+                CampaignEntryBuilder.getBuilder()
+                        .addCampaignable(new FixAmountCampaign(50.0f))
+                        .addCampaignable(new FixAmountCampaign(100.0f))
+                        .addCampaignable(new FixAmountCampaign(150.0f))
+                        .build()
+        );
+
+        shopping.process();
+
+        Assertions.assertEquals(300, shopping.getTotalPrice());
+
+
+    }
+
 }

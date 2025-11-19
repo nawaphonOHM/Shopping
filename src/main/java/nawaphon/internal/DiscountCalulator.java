@@ -3,6 +3,7 @@ package nawaphon.internal;
 
 import nawaphon.export.Campaignable;
 import nawaphon.export.FixAmountCampaign;
+import nawaphon.export.PercentageDiscountByItem;
 import nawaphon.export.PercentageDiscountCampaign;
 import nawaphon.main.CampaignEntry;
 import nawaphon.main.ItemCartEntry;
@@ -37,6 +38,25 @@ public abstract class DiscountCalulator {
             }
 
             final var remaining = new BigDecimal(((PercentageDiscountCampaign) campaign).getPercentage())
+                    .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+
+            return new DiscountReceived(total.multiply(remaining).floatValue());
+        }
+
+        if (campaign instanceof PercentageDiscountByItem) {
+            var total = BigDecimal.ZERO;
+
+            for (final var iterator = itemCart.iterator(); iterator.hasNext(); ) {
+                var item = iterator.next();
+
+                if (!item.getCategory().equals(((PercentageDiscountByItem) campaign).getCategory())) {
+                    continue;
+                }
+
+                total = total.add(new BigDecimal(item.getTotalPrice()));
+            }
+
+            final var remaining = new BigDecimal(((PercentageDiscountByItem) campaign).getAmount())
                     .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
 
             return new DiscountReceived(total.multiply(remaining).floatValue());

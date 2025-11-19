@@ -24,4 +24,8 @@ class CampaignEntryBuilderTest {
 
         assertDoesNotThrow(() -> builder.addCampaignable(new FixAmountCampaign(9.0f)));
     }
+
+    @Test
+    void shouldUnableAddCampaignWithDifferentIdButSameCategory() {
+    }
 }

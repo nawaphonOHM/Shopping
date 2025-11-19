@@ -1,10 +1,7 @@
 package nawaphon.internal;
 
 
-import nawaphon.export.Campaignable;
-import nawaphon.export.FixAmountCampaign;
-import nawaphon.export.PercentageDiscountByItem;
-import nawaphon.export.PercentageDiscountCampaign;
+import nawaphon.export.*;
 import nawaphon.main.CampaignEntry;
 import nawaphon.main.ItemCartEntry;
 import org.jetbrains.annotations.NotNull;
@@ -60,6 +57,22 @@ public abstract class DiscountCalulator {
                     .divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
 
             return new DiscountReceived(total.multiply(remaining).floatValue());
+        }
+
+        if (campaign instanceof DiscountByPoints) {
+            var total = BigDecimal.ZERO;
+
+            for (final var iterator = itemCart.iterator(); iterator.hasNext(); ) {
+                var item = iterator.next();
+
+                total = total.add(new BigDecimal(item.getTotalPrice()));
+            }
+
+            final var maxDiscount = total.multiply(new BigDecimal("0.20"));
+
+
+            return new DiscountReceived(maxDiscount.min(new BigDecimal(((DiscountByPoints) campaign).getPoints()))
+                    .floatValue());
         }
 
         return null;

@@ -15,6 +15,6 @@ public class ItemCartEntry {
     }
 
     public Iterator<Item> iterator() {
-        return null;
+        return itemCart.iterator();
     }
 }
